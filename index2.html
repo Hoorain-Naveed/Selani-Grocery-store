@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head1 {
+            margin-left: 35%;
+            font-weight: 30%;
+            font-size: 130%;
+            color: green;
+        }
+
+        .head2 {
+            margin-left: 42%;
+            margin-top: 0%;
+            font-size: 67%;
+            font-weight: 30%;
+            color: blue;
+        }
+
+        .login-box {
+            
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 35%;
+        }
+
+        .input-box {
+           position: relative;
+            width: 310px;
+            margin: 30px 0;
+            border-bottom: 2px solid #0d0d0d;
+        }
+
+        .input-box label {
+            position: absolute;
+           top:px;
+           left:5%;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #b82e2e;
+            pointer-events: none;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 30px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: black;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            line-height: 57px;
+        }
+        .btn{
+            margin-top: 3%;
+            margin-left: 45%;
+            border-radius: 10%;
+            width: 20%;
+            
+        }
+        .radio-container{
+display: inline-block;
+margin-left: 40%;
+font-size: 190%;
+font-weight: 500%;
+
+        }
+       
+        .green-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+;
+}
+.green{
+    margin-top: 1%;
+    margin-left: 43%;
+}
+
+
+.psw{
+    margin-left: 39%;
+    margin-top: -11%;
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="head1">
+        <h1>SELANI WALFARE</h1>
+    </div>
+    <div class="head2">
+        <h2>ONLINE MARKET PLACE</h2>
+    </div>
+    <div class="login-box">
+        <form action="">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-circle-sharp"></ion-icon></ion-icon>
+                </span>
+                <input type="user name"  id="username"placeholder="User name" required>
+                <!-- <label>USERNAME</label> -->
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call-sharp"></ion-icon>
+                </span>
+                <input type="number"  id="contact"placeholder="CONTACT"required>
+                
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-unread"></ion-icon>
+                </span>
+                <input type="email"  id="email" placeholder="EMAIL" required>
+                <!-- <label> "EMAIL"</label> -->
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="eye-off-sharp"></ion-icon>
+
+                </span>
+                <input type="password"  id="password"placeholder="PASSWORD" required>
+                <!-- <label>PASSWORD</label> -->
+
+               
+            </div>
+        </form>
+    </div>
+    
+    <span class="psw">Forgot <a href="#">Already have an account?login</a></span>
+</div>
+      <div class="green"><button class="green-button" id="signup">SIGN UP</button></div>
+
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+  import { getAuth,createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDAJr9-j0zBzb6uDodX_qd9-biChObPmAA",
+    authDomain: "figma-5fd70.firebaseapp.com",
+    projectId: "figma-5fd70",
+    storageBucket: "figma-5fd70.appspot.com",
+    messagingSenderId: "1053497825193",
+    appId: "1:1053497825193:web:532ff758e36e9922a016b8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+signup.addEventListener("click",(e)=>{
+    const email=document.getElementById("email").value
+    const password=document.getElementById("password").value
+    const contact=document.getElementById("contact").value
+    const username=document.getElementById("username").value
+
+
+createUserWithEmailAndPassword(auth, email, password,username,contact)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert(user)
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    // ..
+  });
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+
+</html>
