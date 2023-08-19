@@ -141,7 +141,7 @@ font-weight: 500%;
                 <!-- <label> "EMAIL"</label> -->
             </div>
             <div class="input-box">
-                <span class="icon"><ion-icon name="eye-off-sharp"></ion-icon>
+                <span class="icon" ><ion-icon name="eye-off-sharp"></ion-icon>
 
                 </span>
                 <input type="password"  id="password"placeholder="PASSWORD" required>
@@ -151,6 +151,9 @@ font-weight: 500%;
             </div>
         </form>
     </div>
+    
+
+
     
     <span class="psw">Forgot <a href="#">Already have an account?login</a></span>
 </div>
@@ -192,17 +195,20 @@ createUserWithEmailAndPassword(auth, email, password,username,contact)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    alert(user)
-      window.location.href="///C:/Users/Admin/OneDrive/Desktop/figma/index4.html"
+    const b=alert("Your account successfully SIGNUP"+user)
+    alert(b)
+
+window.location.href="///C:/Users/Admin/OneDrive/Desktop/figma/index4.html"
     // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorMessage)
+    alert("ERROR:"+errorMessage)
     // ..
   });
 })
+
 </script>
 
 
